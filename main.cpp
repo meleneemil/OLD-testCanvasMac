@@ -37,8 +37,8 @@ c->Modified();
 c->Update();
 gSystem->ProcessEvents();
 
-c->show()
-//rootapp.Run();
+//c->Show();
+rootapp.Run();
 return 0;
 }
 
