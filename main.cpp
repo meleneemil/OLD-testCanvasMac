@@ -22,15 +22,23 @@ int main(int argc, char *argv[])
 	TApplication rootapp("mmDaq Online Monitoring", &argc, argv);
 	rootapp.SetReturnFromRun(true);
 
+TCanvas *c = new TCanvas();
+//c->Show();
  TH1F *h=new TH1F("h","Test",100,-10,10);
 h->FillRandom("gaus",100000);
 h->Draw();
 
+gSystem->ProcessEvents();
 
-TCanvas *c = new TCanvas();
-c->Show();
+//rootapp.Run();
 
-rootapp.Run();
+h->FillRandom("gaus",100000);
+c->Modified();
+c->Update();
+gSystem->ProcessEvents();
+
+c->show()
+//rootapp.Run();
 return 0;
 }
 
